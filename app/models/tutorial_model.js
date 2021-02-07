@@ -5,7 +5,8 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         },
         description: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull:false
         },
         published: {
             type: Sequelize.BOOLEAN

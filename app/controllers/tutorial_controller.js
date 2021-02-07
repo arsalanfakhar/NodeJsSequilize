@@ -57,7 +57,7 @@ exports.findAll = (req, res) => {
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
-    Tutorial.findByPk(id)
+    Tutorial.findByPk(id,{include:["comments"]})
         .then(data => {
             res.send(data);
         })
@@ -97,7 +97,7 @@ exports.update = (req, res,next) => {
 
 // Delete a Tutorial with the specified id in the request
 exports.delete = (req, res) => {
-    
+
 };
 
 // Delete all Tutorials from the database.
@@ -109,3 +109,5 @@ exports.deleteAll = (req, res) => {
 exports.findAllPublished = (req, res) => {
 
 };
+
+
